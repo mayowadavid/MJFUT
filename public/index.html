@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title data-i18n="title"></title>
+    <meta name="description" content="A demo of Stripe Payment Intents" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+    <!-- Load translation files and libraries. -->
+    <script src="https://unpkg.com/i18next/i18next.js"></script>
+    <script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <div class="subscription_body flex_row">
+        <div class="subscription_container flex_row">
+            <h1>HI, WELCOME To MJFUT Ltd</h1>
+            <p>proceed to update your subscription</p>
+            <div class="subscription_input flex_row">
+                <input type="text" id="cusomer_id" placeholder="CUSTOMER ID"/>
+                <button id="payNow">Submit</button>
+            </div>
+            <div id="error-message"></div>
+        </div>
+    </div>
+  </body>
+</html>
