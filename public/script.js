@@ -13,6 +13,11 @@ document.querySelector('#payNow').addEventListener('click', function (evt) {
       }).then(function (result) {
       return result.json();
     }).then(function (json) {
-      window.location.replace(json);
+        if(json.statusCode == 400 ){
+        let errorMessage = "invalid customer id"
+        document.querySelector('#error-message').innerHTML = errorMessage;
+      }else {
+          window.location.replace(json);
+      }
   });;
   });
