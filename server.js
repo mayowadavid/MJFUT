@@ -28,11 +28,15 @@ app.get('/', (req, res) => {
 app.post('/create-customer-portal-session', async (req, res) => {
     const {customerId} = req.body;
   // Authenticate your user.
-  const {url} = await stripe.billingPortal.sessions.create({
-    customer: customerId,
-    return_url: 'http://localhost:4000',
-  });
-  res.json(url);
+  try {
+    const {url} = await stripe.billingPortal.sessions.create({
+      customer: customerId,
+      return_url: 'http://localhost:4000',
+    });
+    res.json(url);
+  } catch(err) {
+    res.json(err);
+  }
 });
 
 
